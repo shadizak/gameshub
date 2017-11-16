@@ -522,7 +522,7 @@
    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
    border-radius: 3px;
    text-align: center;
-   padding: 30px;
+   padding: 10px;
    margin-bottom: 30px;
  }
  .feature .feature-icon {
@@ -2053,19 +2053,13 @@
    margin-right: 10px;
  }
  #branding .site-title {
-   font-size: 16px;
-   font-size: 1.1428571429em;
+   font-size: 24px;
    color: white;
    margin-bottom: 0;
  }
  #branding .site-title a {
    color: white;
  }
- #branding .site-description {
-   font-size: 10px;
-   font-size: 0.7142857143em;
- }
-
  .main-navigation {
    *zoom: 1;
    margin-top: 30px;
@@ -2278,6 +2272,12 @@
    display: block;
    overflow: hidden;
    height: 0;
+ }
+ .slides li{
+   background: url("slide.png") no-repeat fixed center;
+ }
+ .divider{
+   margin-top: 20px;
  }
  .home-slider .slides li {
    min-height: 575px;
