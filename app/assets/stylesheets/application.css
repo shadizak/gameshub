@@ -367,15 +367,15 @@
    width: 32px;
    height: 32px;
    border-radius: 3px;
-   background: #a5a5a5;
-   color: #2b2b2b;
+   background: #45b77d;
+   color: #fff;
    text-align: center;
    font-size: 18px;
    font-size: 1.2857142857em;
    line-height: 1.8;
  }
  .social-links.square .facebook, .social-links.square .twitter, .social-links.square .google-plus, .social-links.square .pinterest {
-   color: white;
+   color: #fff;
  }
  .social-links.square .facebook {
    background-color: #305891;
@@ -796,6 +796,9 @@
  .imagelightbox-arrow {
    -webkit-animation: fade-in .25s linear;
    animation: fade-in .25s linear;
+ }
+ a{
+   text-decoration: none!important;
  }
 
  @-webkit-keyframes fade-in {
@@ -2274,7 +2277,7 @@
    height: 0;
  }
  .slides li{
-   background: url("slide.png") no-repeat fixed center;
+   /*background: url("slide.png") no-repeat fixed center;*/
  }
  .divider{
    margin-top: 20px;
@@ -2285,8 +2288,8 @@
    padding-bottom: 50px;
    background-size: cover;
    background-position: center center;
-   opacity: 0.5;
-     filter: alpha(opacity=50);
+   opacity: 0.7;
+     filter: alpha(opacity=70);
  }
  .home-slider .flex-control-nav {
    position: absolute;
@@ -2564,7 +2567,7 @@
    float: right;
  }
  .page ul, .page ol {
-   border-left: 3px solid #45b77d;
+   border-left: 3px solid #fff;
    padding-left: 30px;
    margin-left: 30px;
    margin: 30px 0 30px 30px;
@@ -2732,5 +2735,5 @@
  }
  .site-footer .social-links a:hover {
    background-color: white;
-   color: #898e90;
+   color: #45b77d;
  }

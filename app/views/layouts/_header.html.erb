@@ -4,17 +4,16 @@
     <div class="site-header">
       <div class="container">
         <a href="index.html" id="branding">
-          <img src="images/logo.png" alt="" class="logo">
+          <%= image_tag("logo.png") %>
           <div class="logo-text">
             <h1 class="site-title">GAMES HUB</h1>
-            <small class="site-description">All Games in All Platforms</small>
           </div>
         </a>
         <!-- #branding -->
 
         <div class="right-section pull-right">
           <a href="#" class="cart">
-            <i class="icon-cart"></i>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             0 items in cart</a>
           <a href="#" class="login-button">Login</a>
         </div>
@@ -51,7 +50,8 @@
           </ul>
           <!-- .menu -->
           <div class="search-form">
-            <label><img src="images/icon-search.png"></label>
+            <label>
+              <%= image_tag("icon-search.png")%></label>
             <input type="text" placeholder="Search...">
           </div>
           <!-- .search-form -->
