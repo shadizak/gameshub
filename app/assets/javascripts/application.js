@@ -9,15 +9,13 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require turbolinks
-//= require rails-ujs
+//= require jquery
 //= require jquery_ujs
-//= require jquery-3.2.1
-//= require jquery-ui-1.12.1.custom.min
+//= require turbolinks
+//= require jquery3
 //= require popper
-//= require bootstrap-switch.min
 //= require bootstrap.min
+//= require bootstrap-switch.min
 //= require nouislider
 //= require moment.min
 //= require bootstrap-datetimepicker.min
