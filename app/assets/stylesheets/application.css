@@ -1366,5 +1366,5 @@ hr.style {
   margin: 28px 0 0px 0;
 }
 #absolute{
-  position: absolute;
+  position: absolute!important;
 }
