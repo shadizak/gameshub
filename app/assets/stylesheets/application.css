@@ -1365,3 +1365,6 @@ hr.style {
 .strip {
   margin: 28px 0 0px 0;
 }
+#absolute{
+  position: absolute;
+}
