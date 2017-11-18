@@ -1,66 +1,63 @@
-<body class="slider-collapse">
-
-  <div id="site-content">
-    <div class="site-header">
-      <div class="container">
-        <a href="index.html" id="branding">
-          <%= image_tag("logo.png") %>
-          <div class="logo-text">
-            <h1 class="site-title">GAMES HUB</h1>
-          </div>
-        </a>
-        <!-- #branding -->
-
-        <div class="right-section pull-right">
-          <a href="#" class="cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            0 items in cart</a>
-          <a href="#" class="login-button">Login</a>
-        </div>
-        <!-- .right-section -->
-
-        <div class="main-navigation">
-          <button class="toggle-menu">
-            <i class="fa fa-bars"></i>
-          </button>
-          <ul class="menu">
-            <li class="menu-item home current-menu-item">
-              <a href="index.html">
-                <i class="icon-home"></i>
-              </a>
-            </li>
-            <li class="menu-item">
-              <%= link_to "PC", "/product" %>
-            </li>
-            <li class="menu-item">
-              <%= link_to "PlayStation", "/product" %>
-            </li>
-            <li class="menu-item">
-              <%= link_to "XBOX", "/product" %>
-            </li>
-            <li class="menu-item">
-              <%= link_to "Wii", "/product" %>
-            </li>
-            <li class="menu-item">
-              <%= link_to "About", "/about" %>
-            </li>
-            <li class="menu-item">
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-          <!-- .menu -->
-          <div class="search-form">
-            <label>
-              <%= image_tag("icon-search.png")%></label>
-            <input type="text" placeholder="Search...">
-          </div>
-          <!-- .search-form -->
-
-          <div class="mobile-navigation"></div>
-          <!-- .mobile-navigation -->
-        </div>
-        <!-- .main-navigation -->
-      </div>
-      <!-- .container -->
+<!-- navbar come here -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
+  <div class="container">
+    <div class="navbar-translate">
+      <%= link_to "GAMES HUB", "/", :class => "navbar-brand" %>
+      <!-- <a class="navbar-brand" href="#">Games Hub</a> -->
+      <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
     </div>
-    <!-- .site-header -->
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "/product", class: "nav-link" do %>
+          <i class="nc-icon nc-controller-modern"></i>
+          Store
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <i class="nc-icon nc-alert-circle-i"></i>About</a>
+      </li>
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <i class="nc-icon nc-single-02"></i>Account</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="nc-icon nc-send"></i>Contact</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#" target="_blank">
+          <i class="fa fa-twitter"></i>
+          <p class="d-lg-none">Twitter</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="#" target="_blank">
+          <i class="fa fa-facebook-square"></i>
+          <p class="d-lg-none">Facebook</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#" target="_blank">
+          <i class="fa fa-instagram"></i>
+          <p class="d-lg-none">Instagram</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#" target="_blank">
+          <i class="fa fa-github"></i>
+          <p class="d-lg-none">GitHub</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- end navbar -->
