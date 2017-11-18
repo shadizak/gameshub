@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery_ujs
 //= require jquery-3.2.1
 //= require jquery-ui-1.12.1.custom.min
@@ -24,6 +23,7 @@
 //= require_tree .
 //= require_self
 //= require paper-kit
+//= require turbolinks
 
 $(document).ready(function() {
   $("#head").mouseenter(function() {
