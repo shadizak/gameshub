@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require rails-ujs
 //= require jquery_ujs
 //= require jquery-3.2.1
@@ -20,10 +21,9 @@
 //= require nouislider
 //= require moment.min
 //= require bootstrap-datetimepicker.min
+//= require paper-kit
 //= require_tree .
 //= require_self
-//= require paper-kit
-//= require turbolinks
 
 $(document).ready(function() {
   $("#head").mouseenter(function() {
