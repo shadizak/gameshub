@@ -1359,13 +1359,18 @@ hr.style {
   background-image: url('banner.jpg')!important;
 }
 
-.page-header-sm {
+/*.page-header-sm {
   background-image: url('codww2.png')!important;
-}
+}*/
 
 .strip {
   margin: 28px 0 0px 0;
 }
-#absolute{
-  position: absolute!important;
+.container-fluid{
+  margin: 0px!important;
+  padding: 0px!important;
+}
+.product-image{
+  min-height: 600px ;
+  width: 100%;
 }
