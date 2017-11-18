@@ -22,13 +22,3 @@
 //= require moment.min
 //= require bootstrap-datetimepicker.min
 //= require paper-kit
-//= require_self
-
-$(document).ready(function() {
-  $("#head").mouseenter(function() {
-     $(this).css("color", "#E6E6FA");
-  });
-	$("#head").mouseleave(function() {
-		 $(this).css("color", "#fff");
-	});
-});
