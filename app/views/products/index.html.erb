@@ -1,0 +1,62 @@
+<%= render 'layouts/main' %>
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="mx-auto col-md-12 card card-index ">
+    <h1 class="text-center">Available Games</h1>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>
+              <h5 class="text-default">#</h5>
+            </th>
+            <th>
+              <h5 class="text-default">Name</h5>
+            </th>
+            <th>
+              <h5 class="text-default">Description</h5>
+            </th>
+            <th>
+              <h5 class="text-default">Image_URL</h5>
+            </th>
+            <th>
+              <h5 class="text-default">Actions</h5>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <td>
+                <p><%= product.id %></p>
+              </td>
+              <td>
+                <p><%= product.name %>
+                </p>
+              </td>
+              <td>
+                <p><%= product.description %>
+                </p>
+              </td>
+              <td>
+                <p><%= product.image_url %>
+                </p>
+              </td>
+              <td>
+                <p><%= link_to 'Show', product, :class => "text-info" %>
+                  <br>
+                  <%= link_to 'Edit', edit_product_path(product), :class => "text-warning" %>
+                  <br>
+                  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "text-danger" %>
+                </p>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+        <%= link_to 'New Game', new_product_path, :class => "btn btn-primary btn-link btn-lg" %>
+      </table>
+    </div>
+  </div>
+</div>

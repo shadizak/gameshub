@@ -1,0 +1,26 @@
+<%= render 'layouts/main' %>
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="mx-auto col-md-12 card card-info ">
+    <h1 class="text-center">Game Info.</h1>
+
+    <h5 class="text-center text-info">Name:</h5>
+    <h5 class="text-center"><%= @product.name %>
+    </h5>
+
+    <h5 class="text-center text-primary">
+      Description:
+    </h5>
+    <h5 class="text-center"><%= @product.description %>
+    </h5>
+
+    <h5 class="text-center">
+      Image url:
+    </h5>
+    <h5 class="text-center text-danger"><%= @product.image_url %>
+    </h5>
+
+    <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-warning btn-link btn-lg" %>
+    <%= link_to 'Back', products_path, :class => "btn btn-primary btn-link btn-lg" %>
+  </div>
+</div>

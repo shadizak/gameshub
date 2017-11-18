@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   get '/index', to: 'static_pages#index'
   get '/about', to: 'static_pages#about'
   get '/product', to: 'static_pages#product'

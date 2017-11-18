@@ -14,49 +14,30 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <%= link_to "/product", class: "nav-link" do %>
-          <i class="nc-icon nc-controller-modern"></i>
-          Store
+          <i class="nc-icon nc-bulb-63"></i>
+          Featured
         <% end %>
       </li>
       <li class="nav-item">
-        <a href="index.html" class="nav-link">
-          <i class="nc-icon nc-alert-circle-i"></i>About</a>
-      </li>
-      <li class="nav-item">
-        <a href="index.html" class="nav-link">
-          <i class="nc-icon nc-single-02"></i>Account</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="nc-icon nc-send"></i>Contact</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="#" target="_blank">
-          <i class="fa fa-twitter"></i>
-          <p class="d-lg-none">Twitter</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="#" target="_blank">
-          <i class="fa fa-facebook-square"></i>
-          <p class="d-lg-none">Facebook</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="#" target="_blank">
-          <i class="fa fa-instagram"></i>
-          <p class="d-lg-none">Instagram</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="#" target="_blank">
-          <i class="fa fa-github"></i>
-          <p class="d-lg-none">GitHub</p>
-        </a>
-      </li>
-    </ul>
-  </div>
+        <%= link_to "/products", class: "nav-link" do %>
+        <i class="nc-icon nc-controller-modern"></i>
+        Games Store
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <a href="index.html#about" class="nav-link">
+        <i class="nc-icon nc-alert-circle-i"></i>About</a>
+    </li>
+    <li class="nav-item">
+      <a href="index.html" class="nav-link">
+        <i class="nc-icon nc-single-02"></i>Account</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="nc-icon nc-send"></i>Contact</a>
+    </li>
+  </ul>
+</div>
 </div>
 </nav>
 

@@ -1,0 +1,10 @@
+<%= render 'layouts/main' %>
+<div class="container-fluid">
+  <div class="mx-auto col-md-12 card card-new ">
+    <h1 class="text-center">New Game</h1>
+
+    <%= render 'form', product: @product %>
+
+    <%= link_to 'Back', products_path,:class => "btn btn-primary btn-link btn-lg" %>
+  </div>
+</div>
