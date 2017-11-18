@@ -21,9 +21,9 @@
 //= require nouislider
 //= require moment.min
 //= require bootstrap-datetimepicker.min
-//= require paper-kit
 //= require_tree .
 //= require_self
+//= require paper-kit
 
 $(document).ready(function() {
   $("#head").mouseenter(function() {
