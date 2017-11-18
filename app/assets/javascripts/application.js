@@ -22,7 +22,6 @@
 //= require moment.min
 //= require bootstrap-datetimepicker.min
 //= require paper-kit
-//= require_tree .
 //= require_self
 
 $(document).ready(function() {
