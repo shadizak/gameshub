@@ -9,12 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
  *= require bootstrap.min
- *= require paper-kit
  *= require nucleo-icons
  *= require font-awesome.min
- *= require_tree .
+  *= require paper-kit
  *= require_self
  */
 
