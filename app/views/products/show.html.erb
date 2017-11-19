@@ -1,26 +1,40 @@
-<%= render 'layouts/main' %>
-<p id="notice"><%= notice %></p>
-<div class="container-fluid">
-  <div class="mx-auto col-md-12 card card-info ">
-    <h1 class="text-center">Game Info.</h1>
-
-    <h5 class="text-center text-info">Name:</h5>
-    <h5 class="text-center"><%= @product.name %>
-    </h5>
-
-    <h5 class="text-center text-primary">
-      Description:
-    </h5>
-    <h5 class="text-center"><%= @product.description %>
-    </h5>
-
-    <h5 class="text-center">
-      Image url:
-    </h5>
-    <h5 class="text-center text-danger"><%= @product.image_url %>
-    </h5>
-
-    <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-warning btn-link btn-lg" %>
-    <%= link_to 'Back', products_path, :class => "btn btn-primary btn-link btn-lg" %>
+<div class="wrapper">
+  <div class="page-header page-header-sm" data-parallax="false">
+    <div class="product-container">
+      <div class="filter"></div>
+      <%= image_tag(@product.image_url, class: "page-header-sm img-fluid product-image") %>
+    </div>
   </div>
+  <br>
+  <div class="section profile-content">
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <div class="owner">
+        <div class="name">
+          <h1 class="title"><%= @product.name %></h1>
+          <h3 class="description"><%= @product.category %></h3>
+        </div>
+        <br>
+      </div>
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <p><%= @product.description %></p>
+          <h4>
+            Price:
+            <%= @product.price %>
+            $
+          </h4>
+          <br>
+          <btn class="btn btn-outline-info btn-round">
+            <i class="nc-icon nc-settings-gear-65"></i>
+            System Requirements</btn>
+          <btn class="btn btn-outline-success btn-round">
+            <i class="nc-icon nc-cart-simple"></i>
+            Add to Cart</btn>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-warning btn-link btn-lg" %>
+  <%= link_to 'Back', products_path, :class => "btn btn-primary btn-link btn-lg" %>
 </div>

@@ -1,12 +1,14 @@
 <%= form_with(model: product, local: true) do |form| %>
 <% if product.errors.any? %>
-  <div id="error_explanation">
+  <div class="col-md-12 text-center" id="error_explanation">
     <h2><%= pluralize(product.errors.count, "error") %>
       prohibited this product from being saved:</h2>
-
     <ul>
       <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li>
+          <h5><%= message %>
+          </h5>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -21,6 +23,14 @@
 </div>
 <div class="col-md-12 text-center">
   <div class="field">
+    <p>
+      <label><%= form.label :category, :class => "register-form" %></label>
+    </p>
+    <%= form.text_field :category, id: :product_category ,:class => "form-control"%>
+  </div>
+</div>
+<div class="col-md-12 text-center">
+  <div class="field">
     <p><%= form.label :description %></p>
     <%= form.text_area :description, id: :product_description,:class => "form-control" %>
   </div>
@@ -29,6 +39,12 @@
   <div class="field">
     <p><%= form.label :image_url %></p>
     <%= form.text_field :image_url, id: :product_image_url,:class => "form-control" %>
+  </div>
+</div>
+<div class="col-md-12 text-center">
+  <div class="field">
+    <p><%= form.label :price %></p>
+    <%= form.text_field :price, id: :product_image_url,:class => "form-control" %>
   </div>
 </div>
 <div class="col-md-12 text-center">
