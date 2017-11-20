@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
-  def product
+  def featured
+    @featured_product = Product.first
   end
 end

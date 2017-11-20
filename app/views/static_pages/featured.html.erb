@@ -2,7 +2,7 @@
   <div class="page-header page-header-sm" data-parallax="false">
     <div class="product-container">
       <div class="filter"></div>
-      <%= image_tag(@product.image_url, class: "page-header-sm img-fluid product-image") %>
+      <%= image_tag(@featured_product.image_url, class: "page-header-sm img-fluid product-image") %>
     </div>
   </div>
   <br>
@@ -11,17 +11,17 @@
       <p id="notice"><%= notice %></p>
       <div class="owner">
         <div class="name">
-          <h1 class="title"><%= @product.name %></h1>
-          <h3 class="description"><%= @product.category %></h3>
+          <h1 class="title"><%= @featured_product.name %></h1>
+          <h3 class="description"><%= @featured_product.category %></h3>
         </div>
         <br>
       </div>
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto text-center">
-          <p><%= @product.description %></p>
+          <p><%= @featured_product.description %></p>
           <h4>
             Price:
-            <%= @product.price %>
+            <%= @featured_product.price %>
             $
           </h4>
           <br>
@@ -36,7 +36,5 @@
     </div>
   </div>
   <div class="text-center">
-    <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-natural btn-link btn-lg" %>
-    <%= link_to 'Browse All Games', products_path, :class => "btn btn-natural btn-link btn-lg" %></div>
-
+    <%= link_to 'Browse All Games', '/products', :class => "btn btn-natural btn-link btn-lg" %></div>
 </div>
