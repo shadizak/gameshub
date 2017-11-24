@@ -1,30 +1,19 @@
-<%= render 'layouts/main' %>
+<%= render partial: 'shared/main' %>
 <p id="notice"><%= notice %></p>
 <h1 class="text-center">Available Games</h1>
 <%= link_to 'New Game', new_product_path, :class => "btn btn-natural btn-link btn-lg" %>
 <div class="container">
   <div class="row">
-    <% @products.each do |product| %>
-    </div>
-    <div class="col-md-4 card list ">
-      <%= image_tag(product.image_url, :class => "img-fluid") %>
-      <h4 class="text-center"><%= product.name %>
-      </h4>
-      <h4 class="text-center"><%= product.category %>
-      </h4>
-      <p class="text-center"><%= truncate( product.description , length: 200) { link_to " Continue reading", product} %>
-      </p>
-      <h4 class="text-center">
-        Price:
-        <%= product.price %>
-        $
-      </h4>
-      <p class="text-center"><%= link_to 'View', product, :class => "btn btn-info btn-link btn-lg" %>
-        <%= link_to 'Edit', edit_product_path(product), :class => "btn btn-warning btn-link btn-lg" %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-link btn-lg" %>
-      </p>
-    <% end %>
-
-  </div>
-</div>
-</div>
+    <%#= @products.each do |product| %>
+      <!-- render partial view template that contain more than one paramter (file name and local variables) -->
+      <%#= render partial: "product", locals: {product: product} %>
+        <!-- render partial view template if the file name of partial is the same as model name -->
+        <%#= render product %>
+          <%# end %>
+            <!-- one-line shortcut -->
+            <%#= render partial: "product", collection: @products %>
+              <!-- render partial view template if the collection (product objects) match the name of the partial -->
+              <%= render @products %>
+            </div>
+          </div>
+        </div>

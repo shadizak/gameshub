@@ -1,0 +1,18 @@
+</div>
+<div class="col-md-4 card list ">
+<%= image_tag(product.image_url, :class => "img-fluid") %>
+<h4 class="text-center"><%= product.name %>
+</h4>
+<h4 class="text-center"><%= product.category %>
+</h4>
+<p class="text-center"><%= truncate( product.description , length: 200) { link_to " Continue reading", product} %>
+</p>
+<h4 class="text-center">
+  Price:
+  <%= product.price %>
+  $
+</h4>
+<p class="text-center"><%= link_to 'View', product, :class => "btn btn-info btn-link btn-lg" %>
+  <%= link_to 'Edit', edit_product_path(product), :class => "btn btn-warning btn-link btn-lg" %>
+  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-link btn-lg" %>
+</p>
