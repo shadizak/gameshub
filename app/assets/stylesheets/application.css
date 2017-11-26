@@ -1446,3 +1446,14 @@ hr.style {
      display: block!important;
   }
 }
+.carousel-indicators{
+  padding: 15px;
+  margin: 10px;
+}
+
+.about-icon{
+  margin-right: 40px;
+ display: inline-block;
+ text-align: center;
+ vertical-align: baseline;
+}
