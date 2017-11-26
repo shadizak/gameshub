@@ -62,7 +62,7 @@
   <div class="card page-carousel">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <% (0...@products.where.not('products.image_url' => nil).count).each do |indicator| %>
+        <% @indicators.each do |indicator| %>
           <li data-target="#carouselExampleIndicators" data-slide-to="<%= indicator %>" class="<%= "active" if indicator == 0 %>"></li>
         <% end %>
       </ol>
