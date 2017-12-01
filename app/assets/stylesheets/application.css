@@ -12,9 +12,9 @@
  *= require bootstrap.min
  *= require nucleo-icons
  *= require font-awesome.min
-  *= require paper-kit
+ *= require paper-kit
  *= require_self
- 
+
 
 /* custom css file*/
 
