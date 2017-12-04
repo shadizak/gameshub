@@ -2,19 +2,11 @@
 <p id="notice"><%= notice %></p>
 <h1 class="text-center">Available Games</h1>
 <%= link_to 'New Game', new_product_path, :class => "btn btn-natural btn-link btn-lg" %>
-<%#= link_to 'Back Home', root_path %>
-  <div class="container">
-    <div class="row">
-      <%#= @products.each do |product| %>
-        <!-- render partial view template that contain more than one paramter (file name and local variables) -->
-        <%#= render partial: "product", locals: {product: product} %>
-          <!-- render partial view template if the file name of partial is the same as model name -->
-          <%#= render product %>
-            <%# end %>
-              <!-- one-line shortcut -->
-              <%#= render partial: "product", collection: @products %>
-                <!-- render partial view template if the collection (product objects) match the name of the partial -->
-                <%= render @products %>
-              </div>
-            </div>
-          </div>
+<div class=" text-center mx-auto">
+  <%= render partial: "shared/search"%>
+</div>
+<div class="container">
+  <div class="row">
+    <%= render @products %>
+  </div>
+</div>

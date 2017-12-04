@@ -20,3 +20,5 @@
 //= require moment.min
 //= require bootstrap-datetimepicker.min
 //= require paper-kit
+//= require cable
+//= require scripts

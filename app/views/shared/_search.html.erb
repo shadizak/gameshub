@@ -1,0 +1,11 @@
+<%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+<i class="nc-icon nc-zoom-split"></i>
+<%= form.label :q, 'Search for:' %>
+<%= form.text_field :q, id: 'q', value: params[:q], class:"form-control col-md-4 mx-auto text-center" %>
+<%= form.submit 'Search', value: "search", class: "btn btn-default my-3" %>
+<% end %>
+<% if params[:commit] == 'search' %>
+<p>Your search query fetched:
+  <%= pluralize(@search_result, "result") %>
+</p>
+<% end %>
