@@ -5,6 +5,7 @@
 <%= form.submit 'Search', value: "search", class: "btn btn-default my-3" %>
 <% end %>
 <% if params[:commit] == 'search' %>
+<%= javascript_include_tag('scripts.js') %>
 <p>Your search query fetched:
   <%= pluralize(@search_result, "result") %>
 </p>
