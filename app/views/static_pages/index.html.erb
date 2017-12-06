@@ -198,7 +198,7 @@
                 <span class="input-group-addon">
                   <i class="nc-icon nc-single-02"></i>
                 </span>
-                <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+                <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" , :required => true %>
               </div>
             </div>
             <div class="col-md-6">
@@ -207,12 +207,12 @@
                 <span class="input-group-addon">
                   <i class="nc-icon nc-email-85"></i>
                 </span>
-                <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+                <%= form.text_field :email, class: "form-control", placeholder: "Enter Email", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
               </div>
             </div>
           </div>
           <%= form.label :message %>
-          <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+          <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5, :required => true %>
           <div class="row">
             <div class="col-md-4 ml-auto mr-auto">
               <%= form.submit "Send Message", class: "btn btn-danger btn-lg btn-fill my-2" %>
