@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/index', to: 'static_pages#index'
   get '/about', to: 'static_pages#about'
   get '/featured', to: 'static_pages#featured'
+  post 'static_pages/thank_you'
   resources :products
   # get '/products/:id', to: 'products#show'
   resources :orders, only: [:index, :show, :create, :destroy]

@@ -1,0 +1,12 @@
+<%= javascript_tag do %>
+$(document).ready(function() { $('body,html').animate({ scrollTop: 600 }, 800); });
+<% end %>
+
+<%= render "shared/main" %>
+<div class="section section-dark text-center">
+<div class="container">
+  <h2 class="title">Got it!</h2>
+  <p class="card-description text-center">Thank you. We have received your message and will respond as soon as possible.</p </div>
+  <br>
+  <%= link_to 'Back', root_path, :class => "btn btn-info btn-link btn-lg" %></div>
+</div>

@@ -28,13 +28,18 @@
       <i class="nc-icon nc-alert-circle-i"></i>
       About
     <% end %>
-    <!-- <li class="nav-item"> <a href="index.html" class="nav-link"> <i class="nc-icon nc-single-02"></i>Account</a> </li> <li class="nav-item"> <a href="#" class="nav-link"> <i class="nc-icon nc-send"></i>Contact</a> </li> -->
+    <!-- <li class="nav-item"> <a href="index.html" class="nav-link"> <i class="nc-icon nc-single-02"></i>Account</a> </li> !-->
     <li class="nav-item">
-      <%= link_to orders_path, class: "nav-link" do %>
-      <i class="nc-icon nc-delivery-fast"></i>
-      Orders
-    <% end %>
-  </li>
+      <%= link_to "#{root_path}#contact", class: "nav-link" do %>
+      <i class="nc-icon nc-send"></i>Contact</a>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to orders_path, class: "nav-link" do %>
+  <i class="nc-icon nc-delivery-fast"></i>
+  Orders
+<% end %>
+</li>
 </ul>
 </div>
 </div>
