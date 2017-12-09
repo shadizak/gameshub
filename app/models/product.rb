@@ -1,15 +1,17 @@
 class Product < ApplicationRecord
   has_many :orders
 
+  # define scope for fetching products that have images
+  scope :products_with_images, -> {where.not(image_url: nil)}
+
   def self.search(search_term)
-    if Rails.env.development? || Rails.env.test?
-      Product.where("name LIKE ?", "%#{search_term}%")
-    else
-      Product.where("name ilike ?", "%#{search_term}%")
-    end
+    # sqllite and postgres are excute search query differently, sqllite uses 'LIKE', postgres uses 'ilike'
+    query_env = Rails.env.production? ? 'ilike' : 'LIKE'
+    Product.where("name #{query_env} ?", "%#{search_term}%")
+
   end
 
   def self.dynamic_indicator
-    Product.where.not('products.image_url' => nil).count
+    products_with_images.count
   end
 end
