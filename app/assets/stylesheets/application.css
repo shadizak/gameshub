@@ -87,7 +87,7 @@ hr.style {
   border-radius: 8px;
   color: #fff;
   width: 70%;
-  margin: 120px 0 70px;
+  margin: 50px 0 70px;
   min-height: 400px;
   padding: 30px;
   z-index: 1;
@@ -154,9 +154,20 @@ hr.style {
  vertical-align: baseline;
 }
 
+.notification{
+  background-color: #000!important;
+}
 
 @media screen and (max-width: 767px) {
   .carousel-caption {
      display: block!important;
   }
+}
+
+.separator-line {
+  margin: auto;
+  background-color: #EEE;
+  height: 1px;
+  width: 100%;
+  display: block;
 }

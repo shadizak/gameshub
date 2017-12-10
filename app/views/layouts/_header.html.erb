@@ -28,7 +28,7 @@
       <i class="nc-icon nc-alert-circle-i"></i>
       About
     <% end %>
-    <!-- <li class="nav-item"> <a href="index.html" class="nav-link"> <i class="nc-icon nc-single-02"></i>Account</a> </li> !-->
+
     <li class="nav-item">
       <%= link_to "#{root_path}#contact", class: "nav-link" do %>
       <i class="nc-icon nc-send"></i>Contact</a>
@@ -39,6 +39,24 @@
   <i class="nc-icon nc-delivery-fast"></i>
   Orders
 <% end %>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <i class="nc-icon nc-single-02"></i>
+  <% if user_signed_in? %>
+    <%= current_user.full_name %>
+  <% else %>
+    Account
+  <% end %>
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+  <% else %>
+    <%= link_to('Login', new_user_session_path, class: "dropdown-item") %>
+    <%= link_to('Register', new_user_registration_path, class: "dropdown-item") %>
+  <% end %>
+</div>
 </li>
 </ul>
 </div>

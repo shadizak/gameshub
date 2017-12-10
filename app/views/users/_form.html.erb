@@ -1,0 +1,41 @@
+<%= form_with(model: user, local: true) do |form| %>
+<% if user.errors.any? %>
+  <div class="col-md-12 text-center" id="error_explanation">
+    <h4><%= pluralize(user.errors.count, "error") %>
+      prohibited this product from being saved:</h4>
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li>
+          <h5><%= message %>
+          </h5>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="col-md-12 text-center">
+  <div class="field">
+    <p>
+      <label>
+        <%= form.label :first_name, :class => "register-form" %>
+      </label>
+    </p>
+    <%= form.text_field :first_name, id: :user_first_name,:class => "form-control" %>
+  </div>
+</div>
+<br>
+<div class="col-md-12 text-center">
+  <div class="field">
+    <p>
+      <label><%= form.label :last_name, :class => "register-form" %></label>
+    </p>
+    <%= form.text_field :last_name, id: :user_last_name ,:class => "form-control"%>
+  </div>
+</div>
+<br>
+<div class="col-md-12 text-center">
+  <div class="actions">
+    <%= form.submit 'Save', :class => "btn btn-warning btn-link btn-lg" %>
+  </div>
+<% end %>
+</div>

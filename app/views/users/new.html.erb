@@ -1,0 +1,8 @@
+<%= render partial: 'shared/main' %>
+<div class="container-fluid">
+  <div class="mx-auto col-md-12 card card-new ">
+    <h1 class="text-center">New User</h1>
+    <%= render 'form', user: @user %>
+    <%= link_to 'Back', users_path,:class => "btn btn-primary btn-link btn-lg" %>
+  </div>
+</div>

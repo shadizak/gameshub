@@ -1,0 +1,19 @@
+<%= render 'shared/main' %>
+<div class="wrapper">
+  <div class="section profile-content">
+    <div class="container">
+      <p id="notice" class="text-center"><%= notice %></p>
+      <div class="owner">
+        <div class="name">
+          <h1 class="title text-default"><%= @user.full_name %>
+            <h3 class="description"><%= @user.email %></h3>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= link_to 'Edit', edit_user_path(@user),:class => "btn btn-natural btn-link btn-lg" %>
+      <%= link_to 'Browse Registered Users', users_path, :class => "btn btn-natural btn-link btn-lg" %></div>
+
+  </div>

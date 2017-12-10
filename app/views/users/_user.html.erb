@@ -1,0 +1,22 @@
+<div class="col-md-12 card list">
+  <p class="text-center">User Name:
+    <%= user.full_name %>
+  </p>
+  <p class="text-center">
+    Email:
+    <%= user.email %>
+  </p>
+  <p class="text-center">
+    Last Visit:
+    <%= user.full_date_format %>
+  </p>
+  <p class="text-center">
+    Registration Date:
+    <%= user.date_format %>
+  </p>
+  <p class="text-center">
+    <%= link_to 'View', user, :class => "btn btn-info btn-link btn-lg" %>
+    <%= link_to 'Edit', edit_user_path(user), :class => "btn btn-warning btn-link btn-lg" %>
+    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-link btn-lg" %>
+  </p>
+</div>

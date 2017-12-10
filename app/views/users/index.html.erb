@@ -1,0 +1,9 @@
+<%= render 'shared/main' %>
+<p id="notice"><%= notice %></p>
+<h1 class="text-center">Registered Users</h1>
+<%= link_to 'New User', new_user_path, :class => "btn btn-natural btn-link btn-lg" %>
+<div class="container">
+  <div class="row">
+    <%= render @users %>
+  </div>
+</div>

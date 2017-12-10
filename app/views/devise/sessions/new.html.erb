@@ -1,0 +1,39 @@
+<%= render 'shared/main' %>
+<div class="mx-auto col-md-12 card card-new ">
+  <h2 class="text-center">Log in</h2>
+  <br>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="col-md-12 text-center">
+    <div class="field">
+      <lable><%= f.label :email, :class => "register-form" %></lable>
+      <%= f.email_field :email, autofocus: false, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <div class="field">
+      <label><%= f.label :password, class: "register-form" %></label>
+      <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me, :class => "form-check-input" %>
+        <%= f.label :remember_me, :class => "register-form" %>
+      </div>
+    <% end -%>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <div class="actions">
+      <%= f.submit "Log in", :class => "btn btn-warning btn-link btn-lg" %>
+    </div>
+  <% end %>
+</div>
+<div class="separator-line "></div>
+<div class="text-center">
+  <p>Looking for something else? here are other alternative action(s).</p>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
