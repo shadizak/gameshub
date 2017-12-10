@@ -3,7 +3,9 @@
   <h2 class="text-center">Log in</h2>
   <br>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <p class="text-center text-danger"><%= devise_error_messages! %></p>
   <div class="col-md-12 text-center">
+
     <div class="field">
       <lable><%= f.label :email, :class => "register-form" %></lable>
       <%= f.email_field :email, autofocus: false, :class => "form-control" %>

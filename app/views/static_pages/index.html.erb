@@ -4,11 +4,35 @@
     <div class="motto text-center">
       <h1 id="head">Get Any Game On Any Platform</h1>
       <br/>
-      <h4 class="text-center" id="head">
-        <%= flash[:notice] %>
-      </h4>
+      <% unless notice.nil? %>
+        <div class="mx-auto col-md-6 alert alert-info alert-with-icon" data-notify="container">
+          <div class="container">
+            <div class="alert-wrapper">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="nc-icon nc-simple-remove"></i>
+              </button>
+              <div class="message">
+                <i class="nc-icon nc-bell-55"></i>
+                <%= notice %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% unless alert.nil? %>
+        <div class="mx-auto col-md-6 alert alert-danger alert-with-icon" data-notify="container">
+          <div class="container">
+            <div class="alert-wrapper">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <i class="nc-icon nc-simple-remove"></i>
+              </button>
+              <div class="message">
+                <i class="nc-icon nc-bell-55"></i>
+                <%= alert %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-
   </div>
 </div>
 <%#= params[:example_key].to_i * 10 %>
