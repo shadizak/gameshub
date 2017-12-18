@@ -4,5 +4,4 @@ class Comment < ApplicationRecord
 
   scope :rating_desc, -> {order(rating: :desc)}
   scope :rating_asc, -> {order(:rating)}
-  scope :rating_avg, -> {where(:rating)}
 end
