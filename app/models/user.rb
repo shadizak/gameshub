@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
   has_many :orders
+  has_many :comments
 
   def full_name
     "#{first_name} #{last_name}"
