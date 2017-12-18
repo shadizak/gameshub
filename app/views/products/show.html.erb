@@ -19,6 +19,13 @@
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto text-center">
           <p><%= @product.description %></p>
+          <br>
+          <h4>User Ratings: Highest:
+            <span class="label label-success"><%= @product.highest_rating_comment.rating %></span>, Average:
+            <span class="label label-info"><%= @product.avg_rating_comment.round(2) %></span>, Lowest:
+            <span class="label label-danger">
+              <%= @product.lowest_rating_comment.rating %></span>
+          </h4>
           <h4>
             Price:
             <%= @product.price %>
