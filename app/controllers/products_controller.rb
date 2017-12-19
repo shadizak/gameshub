@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    # uses products_with_comments scope which acti fetech comments by date, order(created_at: :desc)
+    @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new

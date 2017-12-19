@@ -1,0 +1,20 @@
+<div class="product-reviews text-left">
+  <% @comments.each do |comment| %>
+    <div class="row">
+      <p class="px-2">
+        <i class="nc-icon nc-circle-10"></i>
+        <%= comment.user.full_name %>
+        <span class="label label-default">
+          <%= "#{time_ago_in_words(comment.created_at)} ago" %></span>
+      </p>
+      <div class="rated" data-score="<%= comment.rating %>"></div>
+      <div class="message px-2 col-md-12">
+        <p>
+          <i class="nc-icon nc-chat-33"></i>
+          <%= comment.body %></p>
+      </div>
+
+    </div>
+    <hr>
+  <% end %>
+</div>

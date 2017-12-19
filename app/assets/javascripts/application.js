@@ -21,4 +21,5 @@
 //= require bootstrap-datetimepicker.min
 //= require paper-kit
 //= require cable
+//= require jquery.raty
 //= require scripts

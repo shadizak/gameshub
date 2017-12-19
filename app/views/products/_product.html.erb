@@ -13,9 +13,10 @@
   <%= product.price %>
   $
 </h4>
-<% if product.avg_rating_comment %>
-  <h4 class="text-center">Average Ratings:
-    <span class="label label-info"><%= product.avg_rating_comment.round(2) %></span></h4>
+<% if product.average_rating %>
+  <h4 class="text-center">User Ratings:
+    <div class="rated" data-score="<%= product.average_rating %>"></div>
+  </h4>
 <% end %>
 <p class="text-center"><%= link_to 'View', product, :class => "btn btn-info btn-link btn-lg" %>
   <%= link_to 'Edit', edit_product_path(product), :class => "btn btn-warning btn-link btn-lg" %>

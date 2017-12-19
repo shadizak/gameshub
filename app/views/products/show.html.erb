@@ -25,19 +25,12 @@
             <%= @product.price %>
             $
           </h4>
-          <h4>User Ratings: Highest:
-            <span class="label label-success"><%= @product.highest_rating_comment.rating %></span>, Average:
-            <span class="label label-info"><%= @product.avg_rating_comment.round(2) %></span>, Lowest:
-            <span class="label label-danger">
-              <%= @product.lowest_rating_comment.rating %></span>
+          <h4>User Ratings:
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
           </h4>
+          <%= render 'new_comment' %>
           <br>
-          <btn class="btn btn-outline-info btn-round">
-            <i class="nc-icon nc-settings-gear-65"></i>
-            System Requirements</btn>
-          <btn class="btn btn-outline-success btn-round">
-            <i class="nc-icon nc-cart-simple"></i>
-            Add to Cart</btn>
+          <%= render 'comments' %>
         </div>
       </div>
     </div>
