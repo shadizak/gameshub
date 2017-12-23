@@ -6,12 +6,11 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new(comment_prarms)
     @comment.user = current_user
     if @comment.save
-      redirect_to products_path(@product)
+      redirect_to product_path(@product)
     else
       flash[:error] = "Something went wrong!"
     end
   end
-
   def destroy
   end
 

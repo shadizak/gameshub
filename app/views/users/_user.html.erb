@@ -8,11 +8,11 @@
   </p>
   <p class="text-center">
     Last Visit:
-    <%= user.full_date_format %>
+    <%= user.last_sign_in_at.strftime("%d/%m/%Y %I:%M %p") %>
   </p>
   <p class="text-center">
     Registration Date:
-    <%= user.date_format %>
+    <%= user.created_at.strftime("%d/%m/%Y")%>
   </p>
   <p class="text-center">
     <%= link_to 'View', user, :class => "btn btn-info btn-link btn-lg" %>

@@ -6,6 +6,18 @@
   <p class="text-center text-danger"><%= devise_error_messages! %></p>
   <div class="col-md-12 text-center">
     <div class="field">
+      <label><%= f.label :first_name, :class => "register-form" %></label>
+      <%= f.text_field :first_name, autofocus: false, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <div class="field">
+      <label><%= f.label :last_name, :class => "register-form" %></label>
+      <%= f.text_field :last_name, autofocus: false, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <div class="field">
       <label><%= f.label :email, :class => "register-form" %></label>
       <%= f.email_field :email, autofocus: false, :class => "form-control" %>
     </div>
@@ -30,8 +42,8 @@
     <div class="actions">
       <%= f.submit "Register", :class => "btn btn-warning btn-link btn-lg" %>
     </div>
-  <% end %>
 </div>
+  <% end %>
 <div class="separator-line "></div>
 <div class="text-left">
   <p>Looking for something else? here are other alternative action(s).</p>
