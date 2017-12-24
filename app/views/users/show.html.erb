@@ -3,16 +3,25 @@
   <div class="section profile-content">
     <div class="container">
       <p id="notice" class="text-center"><%= notice %></p>
-        <div class="name text-center">
-          <h1 class="title text-default"><%= @user.full_name %>
-          </div>
-          <br>
+      <div class="name text-center">
+        <h1 class="title text-default"><%= @user.full_name %>
         </div>
-        <div class="text-center">
-          <h5> Email: <%= @user.email %></h5>
-          <h5> Registration Date: <%= @user.created_at.strftime("%d/%m/%Y") %></h5>
-          <h5> Last Visit <%= @user.last_sign_in_at.strftime("%d/%m/%Y %I:%M %p") %></h5>
-        </div>
+        <br>
+      </div>
+      <div class="text-center">
+        <h5>
+          Email:
+          <%= @user.email %></h5>
+        <h5>
+          Registration Date:
+          <%= @user.created_at.strftime("%d/%m/%Y") %></h5>
+        <h5>
+          Last Visit
+          <%= @user.last_sign_in_at.strftime("%d/%m/%Y %I:%M %p") %></h5>
+        <h5>Orders made:
+          <%= @user.orders.count %>
+        </h5>
+      </div>
     </div>
     <div class="text-center">
       <%= link_to 'Edit', edit_user_path(@user),:class => "btn btn-natural btn-link btn-lg" %>
