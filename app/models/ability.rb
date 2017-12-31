@@ -7,9 +7,9 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :manage, User, id: user.id
     # if user is signed in, he/she can manage his/her order
-    if user.present?
-      can :manage, Order, user_id: user.id
-    end
+    # if user.present?
+    #   can :manage, Order, user_id: user.id
+    # end
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions

@@ -4,7 +4,9 @@ class Product < ApplicationRecord
 
   # define scope for fetching products that have images
   scope :products_with_images, -> {where.not(image_url: nil)}
-  scope :products_with_comments, -> {joins(:comments).order(created_at: :desc)}
+  # merge scope that is defined in comment model 'recent_comments scope' 
+  scope :review_recent_comments, -> {joins(:comments).merge(Comment.recent_comments)}
+
 
   def self.search(search_term)
     # sqllite and postgres are excute search query differently, sqllite uses 'LIKE', postgres uses 'ilike'
@@ -27,4 +29,5 @@ class Product < ApplicationRecord
   def lowest_rating_comment
     comments.rating_asc.first
   end
+
 end

@@ -6,14 +6,13 @@
           <h1 class="title text-default">
             Order #<%= @order.id %>
           </div>
-          <div class="col-md-4 mx-auto">
+          <div class="col-md-8 mx-auto">
           <%= image_tag(@order.product.image_url, :class => "img-fluid p-2") %>
           </div>
         <div class="text-center">
           <h5> Game: <%= @order.product.name %></h5>
           <h5> <%= @order.product.category %></h5>
           <h5> <%= "Price: #{@order.total} $" %></h5>
-          <p> Issued by: <%= @order.user.full_name %></p>
         </div>
     </div>
   </div>
