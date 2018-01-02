@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
     @order.total = @product.price
     if @order.save
       redirect_to order_path(@order)
+      flash[:notice] = "Order made successfully!"
     else
       flash[:error] = "Something went wrong!"
     end

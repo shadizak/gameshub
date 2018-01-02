@@ -35,6 +35,10 @@ gem 'devise'
 gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# default will_paginate gem
+# gem 'will_paginate'
+# bootstrap 4 style will_paginate gem
+gem 'will_paginate-bootstrap4'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

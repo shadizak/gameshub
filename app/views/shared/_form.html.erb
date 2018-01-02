@@ -1,16 +1,28 @@
 <%= form_with(model: product, local: true) do |form| %>
 <% if product.errors.any? %>
-  <div class="col-md-12 text-center" id="error_explanation">
-    <h4><%= pluralize(product.errors.count, "error") %>
-      prohibited this product from being saved:</h4>
-    <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li>
-          <h5><%= message %>
-          </h5>
-        </li>
-      <% end %>
-    </ul>
+  <div class="mx-auto col-md-12 alert alert-danger alert-with-icon" data-notify="container">
+    <div class="container">
+      <div class="alert-wrapper">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <i class="nc-icon nc-simple-remove"></i>
+        </button>
+        <div class="message">
+          <p>
+            <i class="nc-icon nc-bell-55"></i>
+            <%= pluralize(product.errors.count, "error") %>
+            prohibited this product from being saved:
+          </p>
+          <br>
+          <% product.errors.full_messages.each do |message| %>
+            <ul>
+              <li>
+                <%= message %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 <div class="col-md-12 text-center">

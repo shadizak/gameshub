@@ -1,10 +1,15 @@
 class Product < ApplicationRecord
   has_many :orders
   has_many :comments
-
+  # model validation
+  validates :name, presence: true
+  validates :description, length: { minimum: 20 }
+  validates :category, presence: true
+  validates :image_url, format: {with: /\.(png|jpg)\Z/i}
+  validates :price, numericality: {greater_than_or_equal_to: 0}
   # define scope for fetching products that have images
   scope :products_with_images, -> {where.not(image_url: nil)}
-  # merge scope that is defined in comment model 'recent_comments scope' 
+  # merge scope that is defined in comment model 'recent_comments scope'
   scope :review_recent_comments, -> {joins(:comments).merge(Comment.recent_comments)}
 
 

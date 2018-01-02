@@ -6,6 +6,7 @@
     </div>
   </div>
   <br>
+  <%= render 'shared/messages' %>
   <div class="section profile-content">
     <div class="container">
       <p id="notice" class="text-center"><%= notice %></p>
@@ -27,7 +28,9 @@
           </h4>
           <br>
           <%= button_to 'Order Now', orders_path(product_id: @product.id, total: @product.price), class: "btn btn-lg btn-fill btn-info" %>
-          <h4>User Ratings: <small>(<%= @product.comments.count%> reviews)</small>
+          <h4>User Ratings:
+            <small>(<%= @product.comments.count%>
+              reviews)</small>
             <div class="rated" data-score="<%= @product.average_rating %>"></div>
           </h4>
           <%= render 'new_comment' %>
@@ -35,8 +38,12 @@
           <%= render 'comments' %>
         </div>
       </div>
+      <div class="pagination justify-content-center">
+        <%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+      </div>
     </div>
   </div>
+
   <div class="text-center">
     <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-natural btn-link btn-lg" %>
     <%= link_to 'Browse All Games', products_path, :class => "btn btn-natural btn-link btn-lg" %></div>
