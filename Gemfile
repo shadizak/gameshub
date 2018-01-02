@@ -36,7 +36,7 @@ gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # default will_paginate gem
-# gem 'will_paginate'
+gem 'will_paginate'
 # bootstrap 4 style will_paginate gem
 gem 'will_paginate-bootstrap4'
 
