@@ -39,6 +39,8 @@ gem 'cancancan'
 gem 'will_paginate'
 # bootstrap 4 style will_paginate gem
 gem 'will_paginate-bootstrap4'
+# gem for showing a modal in bootstrap when deleting
+gem 'data-confirm-modal'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

@@ -18,6 +18,8 @@
 </h4>
 <% if product.average_rating %>
   <h4 class="text-center">User Ratings:
+    <small><%= pluralize(product.comments.count, "review")%>
+      </small>
     <div class="rated" data-score="<%= product.average_rating %>"></div>
   </h4>
 <% end %>

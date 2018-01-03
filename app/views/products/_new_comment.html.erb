@@ -3,14 +3,14 @@
   <br>
   <%= form_with(model: [@product, @product.comments.build]) do |f| %>
   <p>
+    <div class="rating"></div>
+  </p>
+  <p>
     <%= f.label :body, "Comments", :class => "register-form" %><br>
     <%= f.text_area :body,:class => "form-control", placeholder: "Add a comment!", :required => true %>
   </p>
   <p>
-    <div class="rating"></div>
-  </p>
-  <p>
-    <%= f.submit "Save", class: "btn btn-danger btn-lg my-2" %>
+    <%= f.submit "Save", class: "btn btn-primary btn-lg my-2" %>
   </p>
 <% end %>
 <% end %>
