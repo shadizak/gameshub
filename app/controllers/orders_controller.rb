@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  load_and_authorize_resource :order
   before_action :authenticate_user!
   def index
     @orders = Order.includes(:product, :user).where(user_id: current_user.id).all
@@ -21,9 +22,5 @@ class OrdersController < ApplicationController
     end
   end
   def destroy
-  end
-  private
-  def order_params
-    params.require(:order).permit(:user_id, :total)
   end
 end

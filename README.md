@@ -16,5 +16,6 @@ Extra gems:
 - cancancan 2.1.2
 - figaro 1.1.1
 - rails_12factor 0.0.3.
+- will_paginate-bootstrap4
 
 Author: Mohammed Manahi
