@@ -6,4 +6,10 @@ class UserMailer < ApplicationMailer
     mail( to: 'cfgameshub@gmail.com',
     subject: "A new contact form message from #{name}, #{email}")
   end
+
+  def welcome(user)
+    @appname = "Games Hub"
+    mail(to: user.email,
+    subject: "Welcome to #{@appname}!")
+  end
 end

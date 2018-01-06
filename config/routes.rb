@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   post 'static_pages/thank_you'
 
   # devise_for :users
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: { registrations: 'user_registrations'}
+
 
   resources :users
 
