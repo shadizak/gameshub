@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   # load_and_authorize_resource :product
   # load_and_authorize_resource :comment, through: :product
   load_and_authorize_resource except: [:create]
-    def create
+  def create
     # find associtaed product id that comment(s) will be displayed on, pass comment params that are stored in comment_params method
     # locate current signed-in user using devise pre-loaded method current_user, save comment and redirect user to commented product path
     @product = Product.find(params[:product_id])
