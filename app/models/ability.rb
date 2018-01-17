@@ -14,7 +14,7 @@ class Ability
         can :manage, User, id: user.id
         can :product_allowed_actions, Product
         can :comment_allowed_actions, Comment
-        can :order_allowed_actions, Order
+        can :order_allowed_actions, Order, user_id: user.id
       end
     end
     # The first argument to `can` is the action you are giving the user
