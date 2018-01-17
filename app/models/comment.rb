@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
   validates :rating, numericality: { only_integer: true }
 
   # comment paginator
-  self.per_page = 5 
+  self.per_page = 5
   scope :recent_comments, -> {order(created_at: :desc)}
   scope :rating_desc, -> {order(rating: :desc)}
   scope :rating_asc, -> {order(:rating)}
