@@ -8,17 +8,17 @@
         <h4 class="text-info">
           Order #<%= order.id %>
         </h4>
-
+        <%= link_to order.product do %>
         <h4 class="text-success">
           Game:
-          <%= order.product.name %>
+          <%= order.product.name unless order.product.name.blank? %>
         </h4>
         <h4 class="text-warning">
           Category:
           <%= order.product.category %>
         </h4>
         <%= image_tag(order.product.image_url, :class => "img-fluid p-2") %>
-
+      <% end %>
       <h4 class="text-danger text-center">
         <%= "Price: #{order.total} $" %>
       </h4>
