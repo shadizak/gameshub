@@ -10,7 +10,11 @@
     <%= f.text_area :body,:class => "form-control", placeholder: "Add a comment!", :required => true %>
   </p>
   <p>
-    <%= f.submit "Save", class: "btn btn-primary btn-lg my-2" %>
+    <%= f.submit "Save", value: 'save', class: "btn btn-primary btn-lg my-2" %>
   </p>
 <% end %>
+<% end %>
+
+<%= javascript_tag do %>
+$(document).ready(function() { $('body,html').animate({ scrollTop: 1100 }, 800); });
 <% end %>

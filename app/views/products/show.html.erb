@@ -6,7 +6,7 @@
     </div>
   </div>
   <br>
-  <%= render 'shared/messages' %>
+
   <div class="section profile-content">
     <div class="container">
       <div class="owner">
@@ -27,12 +27,16 @@
           </h4>
           <br>
           <%= button_to 'Order Now', orders_path(product_id: @product.id, total: @product.price), class: "btn btn-lg btn-fill btn-info" %>
-          <h4>User Ratings:
+
+          <h4 id="review">User Ratings:
             <small><%= pluralize(@product.comments.count, "review")%>
-              </small>
+            </small>
 
             <div class="rated" data-score="<%= @product.average_rating %>"></div>
           </h4>
+          <div class="col-md-12">
+            <%= render 'shared/messages' %>
+          </div>
           <%= render 'new_comment' %>
           <br>
           <%= render 'comments' %>
