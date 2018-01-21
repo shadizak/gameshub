@@ -42,11 +42,13 @@ gem 'will_paginate-bootstrap4'
 # gem for showing a modal in bootstrap when deleting
 gem 'data-confirm-modal'
 
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # rspec gem is for bdd testing approach
   gem 'rspec-rails', '~> 3.7'
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
