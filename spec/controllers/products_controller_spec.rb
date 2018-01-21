@@ -29,16 +29,16 @@ describe ProductsController, type: :controller do
     end
   end
 
-  # describe 'POST #create' do
-  #   context 'when a new product created' do
-  #     it 'new product with its valid details will be stored' do
-  #       post :create, params:{name: product.name, description: product.description, image_url: product.image_url, category: product.category, price: product.price}
-  #       expect(assigns(:user)).to eq user
-  #       expect(assigns(:product)).to be_a(Product)
-  #       expect(assigns(:product)).to be_persisted
-  #     end
-  #   end
-  # end
+  describe 'POST #create' do
+    context 'when a new product created' do
+      it 'new product with its valid details will be stored' do
+        post :create, params:{name: product.name, description: product.description, image_url: product.image_url, category: product.category, price: product.price}
+        expect(assigns(:user)).to eq user
+        expect(assigns(:product)).to be_a(Product)
+        expect(assigns(:product)).to be_persisted
+      end
+    end
+  end
 
 
 end
