@@ -2,25 +2,26 @@ require 'rails_helper'
 
 describe Product do
 
+  before do
+    @product = FactoryBot.create(:product)
+    @user = FactoryBot.create(:user)
+    @product.comments.create!(rating: 5, user: @user, body: "Great Game!")
+    @product.comments.create!(rating: 3, user: @user, body: "Not Bad!")
+    @product.comments.create!(rating: 1, user: @user, body: "Very Bad Game!")
+  end
+
   context "when the product has comments" do
-    let(:product) {Product.create!(name: 'PES 18', description: 'Stunning football/sport game brought to you by Konami', image_url: 'PES18.jpg', category: 'Sport/Football', price: 39.9)}
-    let(:user) {User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@user.com', password: 'demouserpassword')}
-    before do
-      product.comments.create!(rating: 5, user: user, body: "Great Game!")
-      product.comments.create!(rating: 3, user: user, body: "Not Bad!")
-      product.comments.create!(rating: 1, user: user, body: "Very Bad Game!")
-    end
     it "returns the average rating of all comments" do
       # average_rating method in product model uses the built-in average method in active record directly without using any scope in comment model.
-      expect(product.average_rating).to eq 3
+      expect(@product.average_rating).to eq 3
     end
     it "returns the highest rating of all comments" do
       # highest_rating_comment method in product model uses scope in comment model that fetchs a collection of first highest rating, so there is a need to pass (rating) column in expect method after calling the scope.
-      expect(product.highest_rating_comment.rating).to eq 5
+      expect(@product.highest_rating_comment.rating).to eq 5
     end
     it "returns the lowest rating of all comments" do
       # lowest_rating_comment method in product model uses scope in comment model that fetchs a collection of first lowest rating, so there is a need to pass (rating) column in expect method after calling the scope.
-      expect(product.lowest_rating_comment.rating).to eq 1
+      expect(@product.lowest_rating_comment.rating).to eq 1
     end
   end
 
