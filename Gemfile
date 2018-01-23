@@ -41,8 +41,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap4'
 # gem for showing a modal in bootstrap when deleting
 gem 'data-confirm-modal'
-
-
+# stripe payment gateway
+gem 'stripe'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
