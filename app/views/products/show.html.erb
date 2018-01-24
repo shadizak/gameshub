@@ -27,33 +27,34 @@
           </h4>
           <br>
           <%= form_with(url: '/payments/create') do |form| %>
-          <%= render partial: "shared/stripe_checkout_button" %>
-        <% end %>
-        <br>
-        <%= button_to 'Order Now', orders_path(product_id: @product.id, total: @product.price), class: "btn btn-lg btn-fill btn-info" %>
+          <%= form.hidden_field :product_id, :value => @product.id %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
+          <br>
+          <%= button_to 'Order Now', orders_path(product_id: @product.id, total: @product.price), class: "btn btn-lg btn-fill btn-info" %>
 
-        <h4 id="review">User Ratings:
-          <small><%= pluralize(@product.comments.count, "review")%>
-          </small>
+          <h4 id="review">User Ratings:
+            <small><%= pluralize(@product.comments.count, "review")%>
+            </small>
 
-          <div class="rated" data-score="<%= @product.average_rating %>"></div>
-        </h4>
-        <div class="col-md-12">
-          <%= render 'shared/messages' %>
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
+          </h4>
+          <div class="col-md-12">
+            <%= render 'shared/messages' %>
+          </div>
+          <%= render 'new_comment' %>
+          <br>
+          <%= render 'comments' %>
         </div>
-        <%= render 'new_comment' %>
-        <br>
-        <%= render 'comments' %>
+      </div>
+      <div class="pagination justify-content-center">
+        <%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
       </div>
     </div>
-    <div class="pagination justify-content-center">
-      <%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-    </div>
   </div>
-</div>
 
-<div class="text-center">
-  <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-natural btn-link btn-lg" %>
-  <%= link_to 'Browse All Games', products_path, :class => "btn btn-natural btn-link btn-lg" %></div>
+  <div class="text-center">
+    <%= link_to 'Edit', edit_product_path(@product),:class => "btn btn-natural btn-link btn-lg" %>
+    <%= link_to 'Browse All Games', products_path, :class => "btn btn-natural btn-link btn-lg" %></div>
 
 </div>

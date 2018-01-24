@@ -1,0 +1,25 @@
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <h2>Hi,
+          <%= @purchaser.full_name %></h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>This confirmation message to inform you that you have successfully purchased
+          <%= @purchased_product.name %>, and with total expenses
+          <%= @purchased_product.price %></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <strong><%= @appname %>
+            Contact Support Team!</strong>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>

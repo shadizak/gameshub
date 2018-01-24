@@ -12,4 +12,11 @@ class UserMailer < ApplicationMailer
     mail(to: user.email,
     subject: "Welcome to #{@appname}!")
   end
+  def payment_confirmation(user, product)
+    @purchaser = user
+    @purchased_product = product
+    @app_name = "Game Hub"
+    mail(to: user.email,
+    subject: "Payment Confirmation Notification, #{@app_name}")
+  end
 end
