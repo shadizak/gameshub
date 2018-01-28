@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :description, length: { minimum: 20 }
   validates :category, presence: true
-  validates :image_url, format: {with: /\.(png|jpg)\Z/i}
+  validates :image_url, format: {with: /\.(png|jpg|jpeg)\Z/i}
   validates :price, numericality: {greater_than_or_equal_to: 0}
   # define scope for fetching products that have images
   scope :products_with_images, -> {where.not(image_url: nil)}

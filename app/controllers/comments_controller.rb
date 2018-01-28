@@ -9,11 +9,11 @@ class CommentsController < ApplicationController
     @comment = @product.comments.new(comment_params)
     @comment.user = current_user
     respond_to do |format|
-      if @comment.save
+      if verify_recaptcha(model: @comment) && @comment.save
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { redirect_to @product, alert: 'Review was not saved successfully, review must fulfill comment and rating!' }
+        format.html { redirect_to @product, alert: 'Review was not saved successfully, review must fulfill comment, rating and captcha!' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

@@ -43,6 +43,11 @@ gem 'will_paginate-bootstrap4'
 gem 'data-confirm-modal'
 # stripe payment gateway
 gem 'stripe'
+# brakeman security checker
+gem 'brakeman', '~> 4.1', '>= 4.1.1'
+# recaptcha gem to generate cptcha
+gem "recaptcha", require: "recaptcha/rails"
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
