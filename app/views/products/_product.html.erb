@@ -1,6 +1,6 @@
 <div class="col-md-12 card list">
   <%= link_to product do %>
-  <%= image_tag(product.image_url, :class => "img-fluid") %>
+  <%= image_tag(product.image_url, :class => "img-fluid img-zoom", data_zoom_images: product.image_url) %>
 <% end %>
 <h4 class="text-center">
   <%= product.name %>

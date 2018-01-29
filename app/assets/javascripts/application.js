@@ -22,4 +22,5 @@
 //= require paper-kit
 //= require cable
 //= require jquery.raty
+//= require jquery.elevateZoom-3.0.8.min
 //= require scripts
