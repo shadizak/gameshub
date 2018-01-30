@@ -1,7 +1,8 @@
 <% if signed_in? %>
+
+  <%= form_with(model: [@product, @product.comments.build], remote: true, :id => "new_comment") do |f| %>
   <h4>Add a review:</h4>
   <br>
-  <%= form_with(model: [@product, @product.comments.build]) do |f| %>
   <p>
     <div class="rating"></div>
   </p>
@@ -19,5 +20,5 @@
 <% end %>
 
 <%= javascript_tag do %>
-$(document).ready(function() { $('body,html').animate({ scrollTop: 1100 }, 800); });
+$(document).ready(function() { $('body,html').animate({ scrollTop: 1000 }, 800); });
 <% end %>

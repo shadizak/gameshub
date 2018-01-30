@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   def index
     @orders = Order.includes(:product, :user).where(user_id: current_user.id).all
-    byebug
+    # byebug
   end
   def new
   end

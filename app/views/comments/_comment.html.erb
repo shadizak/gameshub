@@ -1,0 +1,26 @@
+<div class="row">
+  <% if can? :destroy, comment %>
+    <% if signed_in? && current_user.admin? %>
+      <span class="container text-right">
+        <%= link_to ('<i class ="nc-icon nc-simple-remove"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "d-inline btn btn-fill btn-danger" %>
+      </span>
+    <% end %>
+  <% end %>
+  <div class="px-2 text-defualt">
+    <i class="nc-icon nc-circle-10"></i>
+    <%= comment.user.full_name %>
+  </div>
+  <div class=" px-2 col-md-12">
+    <i class="nc-icon nc-satisfied"></i>
+    <span class="rated" data-score="<%= comment.rating %>"></span>
+  </div>
+
+  <div class="message px-2 col-md-12">
+    <p>
+      <i class="nc-icon nc-chat-33"></i>
+      <%= comment.body %></p>
+  </div>
+  <span class="label label-default">
+    <%= "#{time_ago_in_words(comment.created_at)} ago" %></span>
+</div>
+<hr>

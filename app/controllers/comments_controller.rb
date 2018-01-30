@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
       if verify_recaptcha(model: @comment) && @comment.save
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
+        format.js
       else
         format.html { redirect_to @product, alert: 'Review was not saved successfully, review must fulfill comment, rating and captcha!' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

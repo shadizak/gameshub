@@ -1,32 +1,33 @@
-$(document).on('turbolinks:load', function() {
+var autoscrolling  = function(){ $(".alert").delay(1000).fadeOut(10000); };
 
-    $(".alert").delay(1000).fadeOut(10000);
 
-    $('.rating').raty({
-      starHalf: '<%= asset_path 'star-half.png' %>',
-      starOff: '<%= asset_path 'star-off.png' %>',
-      starOn: '<%= asset_path 'star-on.png' %>',
-      scoreName: 'comment[rating]'
-      });
+var refreshRating  = function(){ $('.rating').raty({
+   starHalf: '<%= asset_path 'star-half.png' %>',
+   starOff: '<%= asset_path 'star-off.png' %>',
+   starOn: '<%= asset_path 'star-on.png' %>',
+   scoreName: 'comment[rating]' });
 
-      $('.rated').raty({
-      starHalf: '<%= asset_path 'star-half.png' %>',
-      starOff: '<%= asset_path 'star-off.png' %>',
-      starOn: '<%= asset_path 'star-on.png' %>',
+   $('.rated').raty({ starHalf: '<%= asset_path 'star-half.png' %>',
+    starOff: '<%= asset_path 'star-off.png' %>',
+     starOn: '<%= asset_path 'star-on.png' %>',
       readOnly: true,
       score: function() {
         return $(this).attr('data-score');
       }
     });
+};
 
+var elevatezoom = function(){
+  $(".img-zoom").elevateZoom({
+    zoomType	: "lens",
+    lensShape : "round",
+    lensSize  : 200
   });
+};
 
 
-  $(document).on('turbolinks:load', function() {
-    console.log("script loaded");
-    $(".img-zoom").elevateZoom({
-      zoomType	: "lens",
-      lensShape : "round",
-      lensSize  : 200
-    });
+  $(document).on('turbolinks:load ajaxSuccess', function() {
+    refreshRating ();
+    autoscrolling ();
+    elevatezoom();
   });
