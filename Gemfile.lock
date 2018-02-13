@@ -54,6 +54,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    dalli (2.7.6)
     data-confirm-modal (1.6.0)
       railties (>= 3.0)
     devise (4.4.0)
@@ -228,6 +229,7 @@ DEPENDENCIES
   byebug
   cancancan
   coffee-rails (~> 4.2)
+  dalli
   data-confirm-modal
   devise
   factory_bot_rails (~> 4.0)

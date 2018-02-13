@@ -1,40 +1,42 @@
-<div class="col-md-12 card list">
-  <%= link_to product do %>
-  <%= image_tag(product.image_url, :class => "img-fluid img-zoom", data_zoom_images: product.image_url) %>
-<% end %>
-<h4 class="text-center">
-  <%= product.name %>
-</h4>
-<h4 class="text-center">
-  <%= product.category %>
-</h4>
-<p class="text-center">
-  <%= truncate( product.description , length: 200) %>
-</p>
-<h4 class="text-center">
-  Price:
-  <%= product.price %>
-  $
-</h4>
-<% if product.average_rating %>
-  <h4 class="text-center">User Ratings:
-    <small>(<%= pluralize(product.comments.count, "review")%>)
-    </small>
-    <div class="rated" data-score="<%= product.average_rating %>"></div>
-  </h4>
-<% end %>
-<h4 class="text-center">Downloads:
-  <%= product.orders.count %>
-</h4>
-
-<p class="text-center"><%= link_to 'View', product, :class => "btn btn-info btn-link btn-lg" %>
-  <% if signed_in? && current_user.admin? %>
-    <% if can? :update, product %>
-      <%= link_to 'Edit', edit_product_path(product), :class => "btn btn-warning btn-link btn-lg" %>
-    <% end %>
-    <% if can? :destroy, product %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-link btn-lg" %>
-    <% end %>
+<% cache product do %>
+  <div class="col-md-12 card list">
+    <%= link_to product do %>
+    <%= image_tag(product.image_url, :class => "img-fluid img-zoom", data_zoom_images: product.image_url) %>
   <% end %>
-</p>
+  <h4 class="text-center">
+    <%= product.name %>
+  </h4>
+  <h4 class="text-center">
+    <%= product.category %>
+  </h4>
+  <p class="text-center">
+    <%= truncate( product.description , length: 200) %>
+  </p>
+  <h4 class="text-center">
+    Price:
+    <%= product.price %>
+    $
+  </h4>
+  <% if product.average_rating %>
+    <h4 class="text-center">User Ratings:
+      <small>(<%= pluralize(product.comments.count, "review")%>)
+      </small>
+      <div class="rated" data-score="<%= product.average_rating %>"></div>
+    </h4>
+  <% end %>
+  <h4 class="text-center">Downloads:
+    <%= product.orders.count %>
+  </h4>
+
+  <p class="text-center"><%= link_to 'View', product, :class => "btn btn-info btn-link btn-lg" %>
+    <% if signed_in? && current_user.admin? %>
+      <% if can? :update, product %>
+        <%= link_to 'Edit', edit_product_path(product), :class => "btn btn-warning btn-link btn-lg" %>
+      <% end %>
+      <% if can? :destroy, product %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-link btn-lg" %>
+      <% end %>
+    <% end %>
+  </p>
 </div>
+<% end %>

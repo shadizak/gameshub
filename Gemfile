@@ -47,6 +47,8 @@ gem 'stripe'
 gem 'brakeman', '~> 4.1', '>= 4.1.1'
 # recaptcha gem to generate cptcha
 gem "recaptcha", require: "recaptcha/rails"
+# dalli is used by memcachier for automatic caching in heroku
+gem 'dalli'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
