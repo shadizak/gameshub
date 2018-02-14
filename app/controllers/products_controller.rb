@@ -18,6 +18,8 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    # viewed! is method in product model that uses redis server to get number of product viewers.
+    @product.viewed!
     # uses products_with_comments scope which action fetech comments by date, order(created_at: :desc)
     @comments = @product.comments.paginate(:page => params[:page]).order("created_at DESC")
   end
