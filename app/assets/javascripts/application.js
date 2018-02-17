@@ -24,3 +24,4 @@
 //= require jquery.raty
 //= require jquery.elevateZoom-3.0.8.min
 //= require scripts
+//= require channels/product
