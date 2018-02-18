@@ -1,10 +1,10 @@
 <div class="row">
     <% if current_user && current_user.admin? %>
-      <% if can? :destroy, comment %>
+      <%# if can? :destroy, comment %>
       <span class="container text-right">
         <%= link_to ('<i class ="nc-icon nc-simple-remove"></i>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "d-inline btn btn-fill btn-danger" %>
       </span>
-    <% end %>
+    <%# end %>
   <% end %>
   <div class="px-2 text-defualt">
     <i class="nc-icon nc-circle-10"></i>
