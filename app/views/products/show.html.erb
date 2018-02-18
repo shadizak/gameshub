@@ -50,15 +50,15 @@
           </div>
           <%= render 'new_comment' %>
           <br>
-          <div class="mx-auto col-md-8 alert alert-info alert-with-icon" data-notify="container">
+          <div class="mx-auto col-md-8 alert alert-success alert-with-icon" data-notify="container">
             <div class="container">
               <div class="alert-wrapper">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <i class="nc-icon nc-simple-remove"></i>
                 </button>
-                <div class="message">
+                <div class="text-black message">
                   <i class="nc-icon nc-bell-55"></i>
-                A new comment was posted!</div>
+            Notification: New review is being posted for product: <%= @product.name %> </div>
               </div>
             </div>
           </div>

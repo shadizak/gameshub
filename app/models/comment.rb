@@ -12,4 +12,7 @@ class Comment < ApplicationRecord
   scope :recent_comments, -> {order(created_at: :desc)}
   scope :rating_desc, -> {order(rating: :desc)}
   scope :rating_asc, -> {order(:rating)}
+
+  # invoke update comment job.
+  after_create_commit { CommentUpdateJob.perform_later(self, self.user) }
 end
