@@ -10,16 +10,4 @@ describe CommentsController, type: :controller do
     sign_in user
   end
 
-  # describe 'GET #show' do
-  #   context 'when comments created' do
-  #     it 'loads product show template and list comments' do
-  #       @controller = ProductsController.new
-  #       expect(@controller).to receive(:comment)
-  #       get :show, params: { id: product.id}
-  #       expect(response).to be_ok
-  #       expect(response).to render_template('show')
-  #     end
-  #   end
-  # end
-
 end
