@@ -28,7 +28,7 @@ describe UsersController, type: :controller do
       end
     end
 
-    it "he/she should not use the new resource that belongs to another user" do
+    it "returns status 302, becuase user should not use a resource that belongs to another user" do
       get :show, params: { id: @unauthorized_user.id }
       expect(response).to have_http_status(302)
       expect(response).to redirect_to(root_path)
